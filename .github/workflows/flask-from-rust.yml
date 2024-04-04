@@ -22,7 +22,7 @@ jobs:
       run: cd flask_hello && pipenv sync --dev
 
     - name: Test run flask
-      run: pipenv run cargo run
+      run: cargo run
 
     # - name: Flask from Rust
     #   run: |
