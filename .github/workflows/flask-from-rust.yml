@@ -23,6 +23,7 @@ jobs:
     
     - name: Log
       run: |
+        cd flask_hello
         pipenv --py
         pipenv --venv
 
