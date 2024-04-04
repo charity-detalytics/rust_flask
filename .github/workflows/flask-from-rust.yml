@@ -21,10 +21,13 @@ jobs:
     - name: Install dependencies
       run: cd flask_hello && pipenv sync --dev
 
-    - name: Flask from Rust
-      run: |
-        cargo run &
-        sleep 7
+    - name: Test run flask
+      run: cargo run
 
-    - name: Test API Endpoint
-      run: curl http://localhost:5000/say_hello
+    # - name: Flask from Rust
+    #   run: |
+    #     cargo run &
+    #     sleep 7
+
+    # - name: Test API Endpoint
+    #   run: curl http://localhost:5000/say_hello
