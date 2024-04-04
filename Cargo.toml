@@ -1,0 +1,8 @@
+[package]
+name = "rust_flask"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies.pyo3]
+version = "0.20.3"
+features = ["auto-initialize"]

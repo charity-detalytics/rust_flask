@@ -1,0 +1,30 @@
+name: Flask from Rust
+
+on:
+  push
+
+jobs:
+  flask-from-rust:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@main
+
+    - name: Set up Python
+      uses: actions/setup-python@main
+      with:
+        python-version: '3.11'
+
+    - name: Install pipenv
+      run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
+
+    - name: Install dependencies
+      run: cd flask_hello && pipenv sync --dev
+
+    - name: Flask from Rust
+      run: |
+        cargo run &
+        sleep 7
+
+    - name: Test API Endpoint
+      run: curl http://localhost:5000/say_hello
