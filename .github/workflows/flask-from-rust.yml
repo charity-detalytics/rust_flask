@@ -28,7 +28,7 @@ jobs:
         pipenv --venv
 
     - name: Test run flask
-      run: cargo run
+      run: pipenv run cargo run
 
     # - name: Flask from Rust
     #   run: |
