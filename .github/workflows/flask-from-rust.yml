@@ -20,6 +20,11 @@ jobs:
 
     - name: Install dependencies
       run: cd flask_hello && pipenv sync --dev
+    
+    - name: Log
+      run: |
+        pipenv --py
+        pipenv --venv
 
     - name: Test run flask
       run: cargo run
