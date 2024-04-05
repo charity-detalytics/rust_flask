@@ -15,20 +15,11 @@ jobs:
       with:
         python-version: '3.11'
 
-    - name: Install pipenv
-      run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
-
     - name: Install dependencies
-      run: cd flask_hello && pipenv sync --dev
-    
-    - name: Log
-      run: |
-        cd flask_hello
-        pipenv --py
-        pipenv --venv
+      run: pip install Flask
 
     - name: Test run flask
-      run: pipenv run cargo run
+      run: cargo run
 
     # - name: Flask from Rust
     #   run: |
