@@ -18,10 +18,13 @@ jobs:
     - name: Install dependencies
       run: pip install Flask
 
-    - name: Flask from Rust
-      run: |
-        cargo run &
-        sleep 13
+    - name: Run Flask
+      run: cd flask_hello && python app.py &
+
+    # - name: Flask from Rust
+    #   run: |
+    #     cargo run &
+    #     sleep 13
 
     - name: Test API Endpoint
       run: curl http://localhost:5000/say_hello
